@@ -1,0 +1,26 @@
+.flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+
+.margin-top-20 {
+    margin-top: 20rpx;
+}
+.margin-top-40 {
+    margin-top: 40rpx;
+}
+
+.width100 {
+    width: 100%;
+}

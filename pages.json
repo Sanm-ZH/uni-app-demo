@@ -1,0 +1,38 @@
+{
+    "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path": "pages/home/index",
+            "style": {
+                "navigationBarTitleText": "Uni App"
+            }
+        }, {
+            "path": "pages/demoList/index",
+            "style": {
+                "navigationBarTitleText": "Demo List",
+                "enablePullDownRefresh": false
+            }
+        }
+    ],
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#F5F6F9"
+    },
+    "tabBar": {
+        "color": "#C0C4CC",
+        "selectedColor": "#2C9939",
+        "fontSize": "18px",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+                "pagePath": "pages/home/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/demoList/index",
+                "text": "项目列表"
+            }
+        ]
+    }
+}
