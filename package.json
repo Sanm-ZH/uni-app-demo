@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "push": "bash bash-push.sh",
+        "deploy:h5": "bash bash-deploy-h5.sh"
+    }
+}

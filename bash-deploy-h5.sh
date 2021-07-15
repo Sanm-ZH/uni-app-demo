@@ -4,14 +4,15 @@
 set -e
 
 branch=$(git symbolic-ref --short -q HEAD)
+buidlDir=$(pwd)/unpackage/dist/build/h5
 
 git push origin $branch:$branch
-pnpx gh-pages -d unpackage/dist/build/h5
+pnpx gh-pages -d $buidlDir
 echo -e '\033[32m 已部署成功至sanm-zh.github.io \n'
 
 git remote set-url origin git@gitee.com:sanm-zh/uni-app-demo.git
 git push origin $branch:$branch
-pnpx gh-pages -d unpackage/dist/build/h5
+pnpx gh-pages -d $buidlDir
 echo -e '\033[32m 已部署成功至sanm-zh.gitee.io'
 echo -e '\033[32m 如果不是gitee pro用户请手动更新gitee pages服务 \n'
 
