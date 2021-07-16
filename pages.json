@@ -1,37 +1,54 @@
 {
     "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
         {
-            "path": "pages/home/index",
+            "path": "pages/tabBar/Home",
             "style": {
                 "navigationBarTitleText": "Uni App"
             }
         }, {
-            "path": "pages/demoList/index",
+            "path": "pages/tabBar/DemoList",
             "style": {
                 "navigationBarTitleText": "Demo List",
                 "enablePullDownRefresh": false
             }
         }
     ],
+    "subPackages": [{
+        "root": "pages/demoList",
+        "pages": [{
+            "path": "NumberCount",
+            "style": {
+                "navigationBarTitleText": "计数器",
+                "enablePullDownRefresh": true
+            }
+        }, {
+            "path": "todoList/TodoList",
+            "style": {
+                "navigationBarTitleText": "待办事项",
+                "enablePullDownRefresh": true
+            }
+        }]
+    }],
     "globalStyle": {
-        "navigationBarTextStyle": "black",
         "navigationBarTitleText": "首页",
-        "navigationBarBackgroundColor": "#ffffff",
-        "backgroundColor": "#F5F6F9"
+        "navigationBarBackgroundColor": "#007AFF"
     },
     "tabBar": {
         "color": "#C0C4CC",
-        "selectedColor": "#2C9939",
-        "fontSize": "18px",
+        "selectedColor": "#007AFF",
         "borderStyle": "black",
         "backgroundColor": "#ffffff",
         "list": [{
-                "pagePath": "pages/home/index",
+                "pagePath": "pages/tabBar/Home",
+                "iconPath":"static/logo.png",
+                "selectedIconPath":"static/logo.png",
                 "text": "首页"
             },
             {
-                "pagePath": "pages/demoList/index",
-                "text": "项目列表"
+                "pagePath": "pages/tabBar/DemoList",
+                "iconPath":"static/logo.png",
+                "selectedIconPath":"static/logo.png",
+                "text": "演示"
             }
         ]
     }

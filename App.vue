@@ -13,9 +13,14 @@ export default {
 </script>
 <style>
 /*每个页面公共css */
-@import url("./common/common.css");
+@import url('./common/common.css');
 
 page {
-    background-color: #F0F0F0;
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+.uni-section__head-tag.line {
+    background-color: #007aff !important;
 }
 </style>
