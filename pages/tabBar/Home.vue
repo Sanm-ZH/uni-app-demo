@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { getGrowAge, dateFormat } from '../../common/utils.js'
+import { getGrowAge, dateFormat } from '@/common/utils'
 export default {
     data() {
         return {
