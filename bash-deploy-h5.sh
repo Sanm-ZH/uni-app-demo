@@ -3,6 +3,9 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+echo -e '运行前，确保打包相应版本'
+echo -e '当前版本 \033[32m H5'
+
 branch=$(git symbolic-ref --short -q HEAD)
 buidlDir=$(pwd)/unpackage/dist/build/h5
 
