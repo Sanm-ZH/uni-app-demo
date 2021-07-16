@@ -1,19 +1,31 @@
 <template>
     <view class="page-footer" className="margin-bottom-30">
-        <text>Written by {{ $author }}</text>
+        <text>Written by {{ author }}</text>
     </view>
 </template>
 
+<script>
+export default {
+    computed: {
+        author() {
+            return this.$author
+        }
+    }
+}
+</script>
+
 <style lang="scss">
 .page-footer {
+    display: block;
     width: 100%;
     text-align: center;
+    line-height: 60px;
     font-weight: 800;
     color: #b9b9b9;
     font-size: 14px;
     animation: shadowText 10s infinite;
-    position: absolute;
-    bottom: 15px;
+    bottom: 0px;
+    height: 60px;
 }
 
 @keyframes shadowText {
