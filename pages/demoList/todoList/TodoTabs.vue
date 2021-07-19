@@ -1,7 +1,7 @@
 <template>
     <view class="helper">
         <span class="left">
-            <b class="margin-right-5">{{ unFinishedNum }}</b>
+            <b class="margin-right-5" v-text="unFinishedNum"></b>
             iteams left
         </span>
         <span class="tabs">
@@ -10,8 +10,8 @@
                 :key="item"
                 :class="[item, filter === item ? 'actived' : '']"
                 @click="() => handelToggleFilterClick(item)"
+                v-text="item"
             >
-                {{ item }}
             </span>
         </span>
         <span class="clear" @click="handleClearAllCompletedClick">Clear completed</span>

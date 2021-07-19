@@ -77,6 +77,7 @@ export default {
 .page {
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    overflow-x: hidden;
 }
 .todo-item {
     position: relative;
