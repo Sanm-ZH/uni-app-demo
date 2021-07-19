@@ -1,15 +1,14 @@
 <template>
     <view class="page" @touchstart="todoStart" @touchmove="todoMove" @touchend="todoEnd">
-        <view :class="['todo-item', todo.completed ? 'completed' : '']" :style="`right: ${right}px`">
+        <view :class="['todo-item', todo.completed ? 'completed' : '']" :style="'right:' + right + 'px'">
             <view
                 type="checkbox"
                 :class="['toggle', todo.completed ? 'toggle-check' : '']"
-                :checked="todo.completed"
                 @click="handleOptCompletedClick"
             ></view>
-            <label>{{ todo.content }}</label>
+            <text class="todo-item-context">{{ todo.content }}</text>
         </view>
-        <view class="todo-remove" :style="`right: ${delRigth}px`" @click="handleDelTodoCilck">删 除</view>
+        <view class="todo-remove" :style="'right:' + delRigth + 'px'" @click="handleDelTodoCilck">删 除</view>
     </view>
 </template>
 
@@ -44,7 +43,7 @@ export default {
             this.right = 0
             var touch = e.touches[0]
             var disX = this.startX - touch.clientX
-            if (disX >= 20) {
+            if (disX >= 35) {
                 if (disX > this.delBtnWidth) {
                     disX = this.delBtnWidth
                 }
@@ -85,7 +84,7 @@ export default {
     font-size: 18px;
     width: 100%;
 
-    label {
+    .todo-item-context {
         white-space: pre-line;
         word-break: break-all;
         padding: 15px 15px 15px 5px;
@@ -98,7 +97,7 @@ export default {
     }
 }
 .completed {
-    label {
+    .todo-item-context {
         color: #c1c1c1;
     }
     color: #d9d9d9;
@@ -118,14 +117,14 @@ export default {
     appearance: none;
 }
 .toggle:before {
-    content: url('/static/round.png');
+    content: url('~@/static/round.png');
     position: absolute;
     left: 12px;
     top: 12px;
     cursor: pointer;
 }
 .toggle-check:before {
-    content: url('/static/done.png');
+    content: url('~@/static/done.png');
     position: absolute;
     left: 12px;
     top: 12px;

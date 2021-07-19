@@ -1,20 +1,19 @@
 <template>
     <view class="helper">
-        <span class="left">
-            <b class="margin-right-5" v-text="unFinishedNum"></b>
+        <view class="left">
+            <text class="margin-right-5 left-text" v-text="unFinishedNum"></text>
             iteams left
-        </span>
-        <span class="tabs">
-            <span
+        </view>
+        <view class="tabs">
+            <view
                 v-for="item in statusList"
                 :key="item"
-                :class="[item, filter === item ? 'actived' : '']"
+                :class="['tab-item', item, filter === item ? 'actived' : '']"
                 @click="() => handelToggleFilterClick(item)"
                 v-text="item"
-            >
-            </span>
-        </span>
-        <span class="clear" @click="handleClearAllCompletedClick">Clear completed</span>
+            ></view>
+        </view>
+        <view class="clear" @click="handleClearAllCompletedClick">Clear completed</view>
     </view>
 </template>
 
@@ -53,7 +52,7 @@ export default {
 
 <style scoped lang="scss">
 .helper {
-    padding: 10px;
+    padding: 10px 10px 30px;
     font-weight: 100;
     display: flex;
     justify-content: space-between;
@@ -61,8 +60,6 @@ export default {
     background-color: #ffffff;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
-    position: sticky;
-    bottom: var(--window-bottom);
     box-shadow: 0 0 5px #d2d4da;
     margin-top: 10px;
 }
@@ -79,8 +76,8 @@ export default {
 }
 .left {
     text-align: left;
-    b {
-        color: #007AFF;
+    .left-text {
+        color: #007aff;
     }
 }
 .clear {
@@ -106,15 +103,13 @@ export default {
     width: 200px;
     display: flex;
     justify-content: space-around;
-    & > span {
+    & > .tab-item {
         font-weight: bold;
-    }
-    * {
         display: inline-block;
         padding: 0px 10px;
         cursor: pointer;
         &.actived {
-            background-color: #007AFF;
+            background-color: #007aff;
             border-radius: 3px;
             color: #fff;
             font-weight: bold;

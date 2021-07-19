@@ -1,7 +1,14 @@
 <template>
     <view class="page">
         <view class="input-cont">
-            <input placeholder="接下来要做什么？" v-model="inputText" @blur="handelAddTodo" @confirm="handelAddTodo" />
+            <input
+                placeholder="接下来要做什么？"
+                v-model="inputText"
+                @blur="handelAddTodo"
+                @confirm="() => handelAddTodo('enter')"
+                :focus="inputFocus"
+                class="input-cont-input"
+            />
         </view>
         <Item
             v-for="todo in filterTodoList"
@@ -10,12 +17,14 @@
             @del="handleDeleteTodo"
             @opt="handelOptCompleted"
         />
-        <Tabs
-            :todoList="todoList"
-            :filter="filter"
-            @clearAll="handleClearAllCompleted"
-            @changeFilter="handelChangeFilter"
-        />
+        <view class="tabs-fixed">
+            <Tabs
+                :todoList="todoList"
+                :filter="filter"
+                @clearAll="handleClearAllCompleted"
+                @changeFilter="handelChangeFilter"
+            />
+        </view>
         <PageFooter></PageFooter>
     </view>
 </template>
@@ -32,6 +41,7 @@ export default {
     data() {
         return {
             inputText: '',
+            inputFocus: true,
             todoList: [],
             filter: 'all'
         }
@@ -46,8 +56,9 @@ export default {
         }
     },
     methods: {
-        handelAddTodo() {
-            if (!this.inputText) {
+        handelAddTodo(type) {
+            this.inputFocus = false
+            if (!this.inputText.trim()) {
                 return
             }
             this.todoList.unshift({
@@ -60,6 +71,11 @@ export default {
                 duration: 100,
                 scrollTop: 0
             })
+            if (type === 'enter') {
+                this.$nextTick(() => {
+                    this.inputFocus = true
+                })
+            }
         },
         handleDeleteTodo(id) {
             this.todoList = this.todoList.filter(todo => todo.id !== id)
@@ -94,9 +110,14 @@ export default {
     box-shadow: 0 0 5px #d2d4da;
     margin-bottom: 10px;
 
-    input {
-        color: #007aff;
+    .input-cont-input {
         text-align: center;
     }
+}
+.tabs-fixed {
+    z-index: 99;
+    position: sticky;
+    bottom: var(--window-bottom);
+    background-color: #ffffff;
 }
 </style>

@@ -23,4 +23,10 @@ page {
 .uni-section__head-tag.line {
     background-color: #007aff !important;
 }
+
+input,
+textarea {
+    color: #007aff;
+    caret-color: #007aff;
+}
 </style>
