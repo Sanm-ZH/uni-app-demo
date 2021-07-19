@@ -83,6 +83,7 @@ export default {
     background: #ffffff;
     font-size: 18px;
     width: 100%;
+    transform: right 0.4s;
 
     .todo-item-context {
         white-space: pre-line;
@@ -143,5 +144,6 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    transform: right 0.4s;
 }
 </style>
