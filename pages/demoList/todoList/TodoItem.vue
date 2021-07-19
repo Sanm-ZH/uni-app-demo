@@ -1,12 +1,15 @@
 <template>
-    <view :class="['todo-item', todo.completed ? 'completed' : '']">
-        <view
-            type="checkbox"
-            :class="['toggle', todo.completed ? 'toggle-check' : '']"
-            :checked="todo.completed"
-            @click="handleOptCompletedClick"
-        />
-        <label>{{ todo.content }}</label>
+    <view class="page" @touchstart="todoStart" @touchmove="todoMove" @touchend="todoEnd">
+        <view :class="['todo-item', todo.completed ? 'completed' : '']" :style="`right: ${right}px`">
+            <view
+                type="checkbox"
+                :class="['toggle', todo.completed ? 'toggle-check' : '']"
+                :checked="todo.completed"
+                @click="handleOptCompletedClick"
+            ></view>
+            <label>{{ todo.content }}</label>
+        </view>
+        <view class="todo-remove" :style="`right: ${delRigth}px`" @click="handleDelTodoCilck">删 除</view>
     </view>
 </template>
 
@@ -18,23 +21,68 @@ export default {
             required: true
         }
     },
+    data() {
+        return {
+            right: 0,
+            delBtnWidth: 80
+        }
+    },
+    computed: {
+        delRigth() {
+            return -this.delBtnWidth + this.right
+        }
+    },
     methods: {
+        todoStart(e) {
+            console.log('开始触发')
+            var touch = e.touches[0]
+            this.startX = touch.clientX
+        },
+        //触摸滑动
+        todoMove(e) {
+            console.log('滑动')
+            this.right = 0
+            var touch = e.touches[0]
+            var disX = this.startX - touch.clientX
+            if (disX >= 20) {
+                if (disX > this.delBtnWidth) {
+                    disX = this.delBtnWidth
+                }
+                this.right = disX
+            } else {
+                this.right = 0
+            }
+            // e.preventDefault()
+        },
+        //触摸滑动结束
+        todoEnd(e) {
+            console.log('滑动结束')
+            if (Math.abs(this.right) < this.delBtnWidth) {
+                this.right = 0
+            }
+        },
+
         handleDelTodoCilck() {
             this.$emit('del', this.todo.id)
         },
         handleOptCompletedClick() {
             this.$emit('opt', this.todo.id)
+            this.right = 0
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
+.page {
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
 .todo-item {
     position: relative;
     background: #ffffff;
     font-size: 18px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    width: 100%;
 
     label {
         white-space: pre-line;
@@ -81,5 +129,19 @@ export default {
     left: 12px;
     top: 12px;
     cursor: pointer;
+}
+
+.todo-remove {
+    width: 80px;
+    height: 100%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: -80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
 }
 </style>

@@ -62,7 +62,7 @@ export default {
             })
         },
         handleDeleteTodo(id) {
-            console.log('del', id)
+            this.todoList = this.todoList.filter(todo => todo.id !== id)
         },
         handelOptCompleted(id) {
             const activeTodoIndex = this.todoList.findIndex(todo => todo.id === id)
