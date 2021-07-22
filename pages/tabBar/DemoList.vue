@@ -18,18 +18,13 @@
 <script>
 export default {
     data() {
-        const projectList = [
-            { name: '计数器', path: '/pages/demoList/NumberCount', component: 'NumberCount' },
-            { name: '待办清单', path: '/pages/demoList/todoList/TodoList', component: 'TodoList' },
-            { name: '底部菜单', path: '/pages/demoList/CustomTabs', component: 'CustomTabs' }
-        ]
         return {
-            projectList
-        }
-    },
-    methods: {
-        handelClick(path) {
-            console.log(path)
+            projectList: [
+                { name: '计数器', path: '/pages/demoList/NumberCount', component: 'NumberCount' },
+                { name: '待办清单', path: '/pages/demoList/todoList/TodoList', component: 'TodoList' },
+                { name: '底部菜单', path: '/pages/demoList/CustomTabs', component: 'CustomTabs' },
+                { name: 'Canvas 时钟', path: '/pages/demoList/canvas/canvas-clock', component: 'CanvasClock' }
+            ]
         }
     }
 }

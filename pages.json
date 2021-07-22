@@ -33,6 +33,12 @@
                 "navigationBarTitleText": "底部菜单",
                 "enablePullDownRefresh": true
             }
+        }, {
+            "path": "canvas/canvas-clock",
+            "style": {
+                "navigationBarTitleText": "Canvas 时钟",
+                "enablePullDownRefresh": true
+            }
         }]
     }],
     "globalStyle": {
