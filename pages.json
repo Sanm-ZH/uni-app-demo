@@ -39,6 +39,12 @@
                 "navigationBarTitleText": "Canvas 时钟",
                 "enablePullDownRefresh": true
             }
+        }, {
+            "path": "GradientButton",
+            "style": {
+                "navigationBarTitleText": "Gradient按钮",
+                "enablePullDownRefresh": false
+            }
         }]
     }],
     "globalStyle": {

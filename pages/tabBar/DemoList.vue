@@ -23,7 +23,8 @@ export default {
                 { name: '计数器', path: '/pages/demoList/NumberCount', component: 'NumberCount' },
                 { name: '待办清单', path: '/pages/demoList/todoList/TodoList', component: 'TodoList' },
                 { name: '底部菜单', path: '/pages/demoList/CustomTabs', component: 'CustomTabs' },
-                { name: 'Canvas 时钟', path: '/pages/demoList/canvas/canvas-clock', component: 'CanvasClock' }
+                { name: 'Canvas 时钟', path: '/pages/demoList/canvas/canvas-clock', component: 'CanvasClock' },
+                { name: 'Gradient 按钮', path: '/pages/demoList/GradientButton', component: 'GradientButton' }
             ]
         }
     }
