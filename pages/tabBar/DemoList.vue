@@ -24,7 +24,8 @@ export default {
                 { name: '待办清单', path: '/pages/demoList/todoList/TodoList', component: 'TodoList' },
                 { name: '底部菜单', path: '/pages/demoList/CustomTabs', component: 'CustomTabs' },
                 { name: 'Canvas 时钟', path: '/pages/demoList/canvas/canvas-clock', component: 'CanvasClock' },
-                { name: 'Gradient 按钮', path: '/pages/demoList/GradientButton', component: 'GradientButton' }
+                { name: 'Gradient 按钮', path: '/pages/demoList/GradientButton', component: 'GradientButton' },
+                { name: '太极 按钮', path: '/pages/demoList/canvas/TaichiCanvas', component: 'TaichiCanvas' }
             ]
         }
     }

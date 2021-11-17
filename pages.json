@@ -45,6 +45,12 @@
                 "navigationBarTitleText": "Gradient按钮",
                 "enablePullDownRefresh": false
             }
+        }, {
+            "path": "canvas/TaichiCanvas",
+            "style": {
+                "navigationBarTitleText": "太极canvas",
+                "enablePullDownRefresh": false
+            }
         }]
     }],
     "globalStyle": {
