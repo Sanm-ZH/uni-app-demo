@@ -20,6 +20,7 @@ export default {
     data() {
         return {
             projectList: [
+                { name: '皮卡丘', path: '/pages/demoList/Pikachu', component: 'Pikachu' },
                 { name: '计数器', path: '/pages/demoList/NumberCount', component: 'NumberCount' },
                 { name: '待办清单', path: '/pages/demoList/todoList/TodoList', component: 'TodoList' },
                 { name: '底部菜单', path: '/pages/demoList/CustomTabs', component: 'CustomTabs' },

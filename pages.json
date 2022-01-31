@@ -51,6 +51,12 @@
                 "navigationBarTitleText": "太极canvas",
                 "enablePullDownRefresh": false
             }
+        }, {
+            "path": "Pikachu",
+            "style": {
+                "navigationBarTitleText": "皮卡丘",
+                "enablePullDownRefresh": false
+            }
         }]
     }],
     "globalStyle": {
